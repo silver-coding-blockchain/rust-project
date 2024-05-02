@@ -115,11 +115,22 @@ struct Point<A,B>{
     x:A,
     y:B,
 }
+impl<A,B> Point<A,B>{
+    fn x(&self)->&A{
+        &self.x
+    }
+    fn y(&self)->&B{
+        &self.y
+    }
+}
 fn pro6(){
     let both_integer=Point{x:5,y:10};
     let both_float=Point{x:5.1,y:10.1};
+    let mix_int_float=Point{x:3, y:8.1};
     println!("both integer:{},{}",both_integer.x,both_integer.y);
     println!("both float:{},{}",both_float.x,both_float.y);
+    println!("mix int and float:{},{}",mix_int_float.x(),mix_int_float.y());
+
 }
 fn main(){
     //pro_using_enum_to_store_multipleTypes();
