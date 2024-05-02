@@ -50,8 +50,17 @@ fn pro2(){
         "The user with preference {:?} gets {:?}", user_pref2, giveway2
     );    
 }
+fn pro3(){
+    let list=vec![1,2,3];
+    println!("Before defining closure:{:?}",list);
+    let only_borrows=|| println!("From closure:{:?}", list);
+    println!("Before calling closure:{:?}", list);
+    only_borrows();
+    println!("After calling closure:{:?}", list);
+}
 fn main() {
     println!("Hello, world!");
     //pro1();
-    pro2();
+    //pro2();
+    pro3();
 }
