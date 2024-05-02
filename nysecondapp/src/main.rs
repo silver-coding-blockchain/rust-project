@@ -122,6 +122,13 @@ impl<A,B> Point<A,B>{
     fn y(&self)->&B{
         &self.y
     }
+    fn mixup<A1,B1>(self,other:Point<A1,B1>)->Point<A,B1>{
+        Point{
+            x:self.x,
+            y:other.y,
+        }
+    }
+    
 }
 fn pro6(){
     let both_integer=Point{x:5,y:10};
@@ -130,7 +137,10 @@ fn pro6(){
     println!("both integer:{},{}",both_integer.x,both_integer.y);
     println!("both float:{},{}",both_float.x,both_float.y);
     println!("mix int and float:{},{}",mix_int_float.x(),mix_int_float.y());
-
+    let p1=Point{x:3,y:10.4};
+    let p2=Point{x:"hello",y:'c'};
+    let p3=p1.mixup(p2);
+    println!("p3.x={},p3.y={}", p3.x,p3.y);
 }
 fn main(){
     //pro_using_enum_to_store_multipleTypes();
