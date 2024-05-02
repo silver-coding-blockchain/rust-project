@@ -18,6 +18,16 @@ pub fn eat_at_restaurant(){
     meal.toast=String::from("wheat");
     println!("I'd like {} toast please", meal.toast);
 }
+fn pro_common_collections(){
+    let mut v=vec![100,32,57];
+    for i in &mut v {
+        *i+=50;
+        println!("{i}");
+    }
+    for i in &mut v {
+        println!("{i}");
+    }
+}
 fn main(){
-    eat_at_restaurant();
+    pro_common_collections();
 }
