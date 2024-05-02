@@ -1,3 +1,4 @@
+
 mod back_of_house{
     pub struct Breakfast{
         pub toast:String,
@@ -28,6 +29,20 @@ fn pro_common_collections(){
         println!("{i}");
     }
 }
+fn pro_using_enum_to_store_multipleTypes(){
+    #[derive(Debug)]
+    enum SpreadSheetCell{
+        Int(i32),
+        Float(f64),
+        Text(String),
+    }
+    let low=vec![
+        SpreadSheetCell::Int(3),
+        SpreadSheetCell::Float(10.10),
+        SpreadSheetCell::Text(String::from("blue")),
+    ];
+    println!("{:?},{:?},{:?}",low[0],low[1],low[2]);
+}
 fn main(){
-    pro_common_collections();
+    pro_using_enum_to_store_multipleTypes();
 }
