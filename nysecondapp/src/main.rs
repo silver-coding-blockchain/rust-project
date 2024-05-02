@@ -214,6 +214,14 @@ mod tests1{
     }
 }
 
+fn pro9(){
+    use std::env;
+    let args:Vec<String>=env::args().collect();
+    let query=&args[1];
+    let file_path=&args[2];
+    println!("Searching for {}", query);
+    println!("In file {}", file_path);
+}
 fn main(){
     //pro_using_enum_to_store_multipleTypes();
     //pro1();
@@ -223,6 +231,8 @@ fn main(){
     //pro5();
     //pro6();
     //pro7();
-  //  pro8();
+    //pro8();
+    pro9();
 }
+
 
