@@ -128,8 +128,10 @@ impl<A,B> Point<A,B>{
             y:other.y,
         }
     }
-    
 }
+
+
+
 fn pro6(){
     let both_integer=Point{x:5,y:10};
     let both_float=Point{x:5.1,y:10.1};
@@ -142,6 +144,37 @@ fn pro6(){
     let p3=p1.mixup(p2);
     println!("p3.x={},p3.y={}", p3.x,p3.y);
 }
+
+fn pro7(){
+    let integer=Some(5);
+}
+
+use std::fmt::Display;
+
+struct Pair<T>{
+    x:T,
+    y:T,
+}
+impl<T> Pair<T>{
+    fn new(x:T,y:T)->Self{
+        Self{x,y}
+    }
+}
+impl<T:Display+PartialOrd> Pair<T>{
+    fn cmp_display(&self){
+        if self.x>=self.y{
+            println!("The largest number is x={}", self.x);
+        } else{
+            println!("The largest number is y={}", self.y);
+        }
+    }
+}
+fn pro8(){
+    let p1=Pair{x:5.1,y:8.5};
+    let p2=Pair{x:6.1,y:2.2};
+    p1.cmp_display();
+    p2.cmp_display();
+}
 fn main(){
     //pro_using_enum_to_store_multipleTypes();
     //pro1();
@@ -149,5 +182,7 @@ fn main(){
     //pro3();
     //pro4();
     //pro5();
-    pro6();
+    //pro6();
+    //pro7();
+    pro8();
 }
