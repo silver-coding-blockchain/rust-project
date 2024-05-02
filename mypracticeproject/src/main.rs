@@ -58,9 +58,24 @@ fn pro3(){
     only_borrows();
     println!("After calling closure:{:?}", list);
 }
+#[derive(Debug)]
+struct Rectangle{
+    width:u32,
+    height:u32,
+}
+fn pro4(){
+    let mut list=[
+        Rectangle{width:10, height:1},
+        Rectangle{width:3, height:5},
+        Rectangle{width:7, height:12},
+    ];
+    list.sort_by_key(|r| r.width);
+    println!("{:#?}",list);
+}
 fn main() {
     println!("Hello, world!");
     //pro1();
     //pro2();
-    pro3();
+    //pro3();
+    pro4();
 }
