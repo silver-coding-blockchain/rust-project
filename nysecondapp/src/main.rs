@@ -175,6 +175,17 @@ fn pro8(){
     p1.cmp_display();
     p2.cmp_display();
 }
+#[cfg(test)]
+mod tests{
+    #[test]
+    fn exploration(){
+        assert_eq!(2+2,4);
+    }
+    #[test]
+    fn another(){
+        panic!("Make this test fail");
+    }
+}
 fn main(){
     //pro_using_enum_to_store_multipleTypes();
     //pro1();
@@ -184,5 +195,6 @@ fn main(){
     //pro5();
     //pro6();
     //pro7();
-    pro8();
+  //  pro8();
 }
+
