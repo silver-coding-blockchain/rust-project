@@ -29,6 +29,7 @@ fn pro_common_collections(){
         println!("{i}");
     }
 }
+
 fn pro_using_enum_to_store_multipleTypes(){
     #[derive(Debug)]
     enum SpreadSheetCell{
@@ -74,9 +75,58 @@ fn pro3(){
         }
     });
 }
+// fn largest(list:&[i32])->&i32{
+//     let mut largest=&list[0];
+//     for item in list{
+//         if item>largest{
+//             largest=item;
+//         }
+//     }
+//     largest
+// }
+
+//fn largest<T>(list:&[T])->&T{
+    // let mut largest=&list[0];
+    // for item in list{
+    //     if item>largest{
+    //         largest=item;
+    //     }
+    // }
+    // largest
+//}
+fn pro4(){
+    let number_list=vec![34,50,25,100,65];
+    // let mut largest=&number_list[0];
+    // for number in &number_list{
+    //     if number>largest{
+    //         largest=number;
+    //     }
+    // }
+    //let result=largest(&number_list);
+    //println!("The largest number is {}",result);
+}
+fn pro5(){
+    let number_list=vec![34,50,25,100,65];
+    //let result=largest(&number_list);
+    //println!("The largest number is {}",result);
+}
+
+struct Point<A,B>{
+    x:A,
+    y:B,
+}
+fn pro6(){
+    let both_integer=Point{x:5,y:10};
+    let both_float=Point{x:5.1,y:10.1};
+    println!("both integer:{},{}",both_integer.x,both_integer.y);
+    println!("both float:{},{}",both_float.x,both_float.y);
+}
 fn main(){
     //pro_using_enum_to_store_multipleTypes();
     //pro1();
     //pro2();
-    pro3();
+    //pro3();
+    //pro4();
+    //pro5();
+    pro6();
 }
