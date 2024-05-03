@@ -3,9 +3,12 @@ use std::cell::RefCell;
 use std::collections::btree_map::Values;
 use std::env;
 use std::fs;
+use std::fs::Metadata;
 use std::rc::Rc;
 use std::thread;
 use std::time::Duration;
+use std::sync::mpsc;
+use std::sync::{Arc,Mutex};
 
 #[derive(Debug,PartialEq,Copy,Clone)]
 enum ShirtColor{
@@ -167,7 +170,7 @@ fn pro8(){
     );
 }
 fn pro9(){
-    thread::spawn(||{
+    let handle=thread::spawn(||{
         for i in 1..10{
             println!("hi number {} from the spawned thread!",i);
             thread::sleep(Duration::from_millis(1));
@@ -177,6 +180,41 @@ fn pro9(){
         println!("hi number {} from the main thread!",i);
         thread::sleep(Duration::from_millis(1));
     }
+    handle.join().unwrap();
+}
+fn pro10(){
+    let (tx,rx)=mpsc::channel();
+    thread::spawn(move||{
+        let val=String::from("hi");
+        tx.send(val.clone()).unwrap();
+        println!("val is {}",val);
+    });
+    let received=rx.recv().unwrap();
+    println!("Got:{}",received);
+}
+fn pro11(){
+    let m=Mutex::new(5);
+    {
+        let mut num=m.lock().unwrap();
+        *num=6;
+    }
+    println!("m={:?}",m);
+}
+fn pro12(){
+    let counter=Arc::new(Mutex::new(0));
+    let mut handles=vec![];
+    for _ in 0..10{
+        let counter=Arc::clone(&counter);
+        let handle=thread::spawn(move ||{
+            let mut num=counter.lock().unwrap();
+            *num+=1;
+        });
+        handles.push(handle);
+    }
+    for handle in handles{
+        handle.join().unwrap();
+    }
+    println!("Result:{}",*counter.lock().unwrap());
 }
 fn main() {
     println!("Hello, world!");
@@ -188,7 +226,9 @@ fn main() {
     //pro6();
     //pro7();
     //pro8();
-    pro9();
-    
+    //pro9();
+    //pro10();
+    //pro11();
+    pro12();
 }
 
