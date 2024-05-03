@@ -4,6 +4,9 @@ use std::collections::btree_map::Values;
 use std::env;
 use std::fs;
 use std::rc::Rc;
+use std::thread;
+use std::time::Duration;
+
 #[derive(Debug,PartialEq,Copy,Clone)]
 enum ShirtColor{
     Red,
@@ -163,6 +166,18 @@ fn pro8(){
         Rc::weak_count(&leaf),
     );
 }
+fn pro9(){
+    thread::spawn(||{
+        for i in 1..10{
+            println!("hi number {} from the spawned thread!",i);
+            thread::sleep(Duration::from_millis(1));
+        }
+    });
+    for i in 1..5{
+        println!("hi number {} from the main thread!",i);
+        thread::sleep(Duration::from_millis(1));
+    }
+}
 fn main() {
     println!("Hello, world!");
     //pro1();
@@ -172,7 +187,8 @@ fn main() {
     //pro5();
     //pro6();
     //pro7();
-    pro8();
+    //pro8();
+    pro9();
     
 }
 
