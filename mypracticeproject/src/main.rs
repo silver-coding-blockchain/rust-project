@@ -92,6 +92,24 @@ fn pro6(){
     println!("sum={total}");
     assert_eq!(total,6);
 }
+
+struct CustomSmartPointer{
+    data:String,
+}
+impl Drop for CustomSmartPointer{
+    fn drop(&mut self){
+        println!("Dropping CustomSmartPointer with data {}",self.data);
+    }
+}
+fn pro7(){
+    let c=CustomSmartPointer{
+        data:String::from("my stuff"),
+    };
+    let d=CustomSmartPointer{
+        data:String::from("other stuff"),
+    };
+    println!("CustomSmartPointers created");
+}
 fn main() {
     println!("Hello, world!");
     //pro1();
@@ -99,5 +117,6 @@ fn main() {
     //pro3();
     //pro4();
     //pro5();
-    pro6();
+    //pro6();
+    pro7();
 }
