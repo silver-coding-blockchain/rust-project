@@ -12,13 +12,13 @@ contract Marketplace{
         address owner;
         bool purchased;
     }
-    event ProductCreated{
-        uint id;
-        string name;
-        uint price;
-        address owner;
-        bool purchased;
-    }
+    event ProductCreated(
+        uint id,
+        string name,
+        uint price,
+        address owner,
+        bool purchased
+    );
     constructor() public{
         name="Dapp University Marketplace";
     }
