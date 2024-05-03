@@ -85,11 +85,19 @@ fn pro5(){
     });
     println!("{:#?}, sorted in {num_sort_operations} operations", list);
 }
+fn pro6(){
+    let v1=vec![1,2,3];
+    let v1_iter=v1.iter();
+    let total:i32=v1_iter.sum();
+    println!("sum={total}");
+    assert_eq!(total,6);
+}
 fn main() {
     println!("Hello, world!");
     //pro1();
     //pro2();
     //pro3();
     //pro4();
-    pro5();
+    //pro5();
+    pro6();
 }
