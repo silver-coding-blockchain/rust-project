@@ -317,6 +317,23 @@ fn pro14(){
     post.add_text("I ate a salad for lunch today");
     assert_eq!("", post.content());
 }
+fn print_coordinates((x,y):(i32,i32)){
+    println!("Current location:({},{})",x,y);
+}
+fn haha(x:i32){
+    println!("haha-{}",x);
+}
+struct ha{
+    x:i32
+}
+fn pro15(){
+    let point=(3,5);
+    print_coordinates(point);
+    println!("Ok={:?}",point);
+    let ha=ha{x:30};
+    let hahaha=ha;
+    println!("Ok={}",hahaha.x);
+}
 fn main() {
     println!("Hello, world!");
     //pro1();
@@ -332,6 +349,7 @@ fn main() {
     //pro11();
     //pro12();
     //pro13();
-    pro14();
+    //pro14();
+    pro15();
 }
 
