@@ -344,6 +344,16 @@ fn pro16(){
     }
     println!("at the end: x={:?},y={y}",x);
 }
+struct Point{
+    x:i32,
+    y:i32,
+}
+fn pro17(){
+    let p=Point{x:9,y:7};
+    let Point{x:a,y:b}=p;
+    assert_eq!(9,a);
+    assert_eq!(7,b);
+}
 fn main() {
     println!("Hello, world!");
     //pro1();
@@ -361,6 +371,7 @@ fn main() {
     //pro13();
     //pro14();
     //pro15();
-    pro16();
+    //pro16();
+    pro17();
 }
 
