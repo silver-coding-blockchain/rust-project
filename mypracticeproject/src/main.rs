@@ -334,6 +334,16 @@ fn pro15(){
     let hahaha=ha;
     println!("Ok={}",hahaha.x);
 }
+fn pro16(){
+    let x=Some(5);
+    let y=10;
+    match x{
+        Some(50)=>println!("Got 50"),
+        Some(y)=>println!("Matched, y={y}"),
+        _=>println!("Default case,x={:?}",x),
+    }
+    println!("at the end: x={:?},y={y}",x);
+}
 fn main() {
     println!("Hello, world!");
     //pro1();
@@ -350,6 +360,7 @@ fn main() {
     //pro12();
     //pro13();
     //pro14();
-    pro15();
+    //pro15();
+    pro16();
 }
 
