@@ -2,9 +2,11 @@ use std::cell::Ref;
 use std::cell::RefCell;
 use std::collections::btree_map::Values;
 use std::env;
+use std::fmt::write;
 use std::fs;
 use std::fs::Metadata;
 use std::pin;
+use std::process::Output;
 use std::rc::Rc;
 use std::thread;
 use std::time::Duration;
@@ -354,6 +356,30 @@ fn pro17(){
     assert_eq!(9,a);
     assert_eq!(7,b);
 }
+use std::fmt;
+trait OutlinePrint: fmt::Display{
+    fn outline_print(&self){
+        let output=self.to_string();
+        let len=output.len();
+        println!("{}","*".repeat(len+4));
+        println!("*{}*"," ".repeat(len+2));
+        println!("* {} *",output);
+        println!("*{}*"," ".repeat(len+2));
+        println!("{}","*".repeat(len+4));
+    }
+}
+impl  OutlinePrint for Point {
+    
+}
+impl fmt::Display for Point {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "({},{})",self.x,self.y)
+    }
+}
+fn pro18(){
+    let p=Point{x:4,y:5};
+    println!("{:?}",p.outline_print());
+}
 fn main() {
     println!("Hello, world!");
     //pro1();
@@ -372,6 +398,7 @@ fn main() {
     //pro14();
     //pro15();
     //pro16();
-    pro17();
+    //pro17();
+    pro18();
 }
 
