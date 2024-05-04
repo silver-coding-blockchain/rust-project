@@ -1,6 +1,5 @@
-workspace = { members = ["hello_macro", "hello_macro_derive"] }
 [package]
-name = "mypracticeproject"
+name = "hello_macro"
 version = "0.1.0"
 edition = "2021"
 
