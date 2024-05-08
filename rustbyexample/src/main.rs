@@ -1,6 +1,8 @@
-mod Formatting;
-mod primitives_literals_operators;
-mod tuples;
+#![allow(dead_code)]
+
+//mod Formatting;
+//mod primitives_literals_operators;
+//mod tuples;
 mod array_and_slice;
 fn main() {
    //Formatting::main();
