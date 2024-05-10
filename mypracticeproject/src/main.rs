@@ -531,6 +531,16 @@ fn pro25(){
     let index=Index(10);
     println!("{}",get_joined_str(&index, &"John".to_string(), &"Conor".to_string()))
 }
+trait ConstantValue{
+    const VAL:i32;
+}
+struct MyStruct;
+impl ConstantValue for MyStruct {
+    const VAL:i32 = 10;
+}
+fn pro26(){
+    println!("{}",MyStruct::VAL);
+}
 fn main() {
     println!("Hello, world!");
     //pro1();
@@ -550,6 +560,6 @@ fn main() {
     //pro15();
     //pro16();
     //pro17();
-    pro25();
+    pro26();
 }
 
