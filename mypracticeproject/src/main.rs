@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 use std::cell::Ref;
 use std::cell::RefCell;
 use std::collections::btree_map::Values;
@@ -380,6 +382,14 @@ fn pro18(){
     let p=Point{x:4,y:5};
     println!("{:?}",p.outline_print());
 }
+fn append_world(value:&mut String){
+    value.push_str(", world!");
+}
+fn pro19(){
+    let mut s1=String::from("hello");
+    append_world(&mut s1);
+    println!("The value is now {s1:?}");
+}
 fn main() {
     println!("Hello, world!");
     //pro1();
@@ -399,6 +409,6 @@ fn main() {
     //pro15();
     //pro16();
     //pro17();
-    pro18();
+    pro19();
 }
 
