@@ -390,6 +390,17 @@ fn pro19(){
     append_world(&mut s1);
     println!("The value is now {s1:?}");
 }
+fn length_of_string(value:&String)->usize{
+    return value.len();
+}
+fn pro20(){
+    let s1=String::from("Hey there!");
+    let r1=&s1;
+    let r2=&s1;
+    let len=length_of_string(r1);
+    println!("The length of {r2} is {len}");
+
+}
 fn main() {
     println!("Hello, world!");
     //pro1();
@@ -409,6 +420,6 @@ fn main() {
     //pro15();
     //pro16();
     //pro17();
-    pro19();
+    pro20();
 }
 
