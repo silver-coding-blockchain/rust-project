@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 
+use std::array;
 use std::cell::Ref;
 use std::cell::RefCell;
 use std::collections::btree_map::Values;
@@ -411,6 +412,27 @@ fn pro21(){
 
 
 }
+
+#[derive(Debug)]
+enum Selection<T>{
+    Some(T),
+    None,
+}
+fn first_element<T>(array:&[T])->Selection<&T>{
+    if array.len()>0 {
+        Selection::Some(&array[0])
+    } else {
+        Selection::None
+    }
+}
+fn pro22(){
+    let a=[1,2,3];
+    let first_from_a=first_element(&a);
+    println!("{first_from_a:?}");
+    let b:[i32;0]=[];
+    let first_from_b=first_element(&b);
+    println!("{first_from_b:?}");
+}
 fn main() {
     println!("Hello, world!");
     //pro1();
@@ -430,6 +452,6 @@ fn main() {
     //pro15();
     //pro16();
     //pro17();
-    pro21();
+    pro22();
 }
 
