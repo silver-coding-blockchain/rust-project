@@ -398,7 +398,17 @@ fn pro20(){
     let r1=&s1;
     let r2=&s1;
     let len=length_of_string(r1);
-    println!("The length of {r2} is {len}");
+    println!("The length of {r2:?} is {len}");
+}
+fn pro21(){
+    let mut s=String::from("hello");
+    let r1=&s;
+    let r2=&s;
+    println!("{r1} and {r2}");
+    let r3=&mut s;
+    *r3=String::from("world");
+    println!("{r3}");
+
 
 }
 fn main() {
@@ -420,6 +430,6 @@ fn main() {
     //pro15();
     //pro16();
     //pro17();
-    pro20();
+    pro21();
 }
 
