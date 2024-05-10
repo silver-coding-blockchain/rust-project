@@ -5,6 +5,7 @@ use std::cell::Ref;
 use std::cell::RefCell;
 use std::collections::btree_map::Values;
 use std::env;
+use std::fmt::format;
 use std::fmt::write;
 use std::fs;
 use std::fs::Metadata;
@@ -512,6 +513,24 @@ fn pro24() {
     println!("books: {books:#?}");
 }
 
+struct Index(i32);
+trait Joining{
+    type A;
+    fn join_to_str(&self, _:&Self::A,_:&Self::A)->String;
+}
+impl Joining for Index{
+    type A = String;
+    fn join_to_str(&self, name:&Self::A,last_name:&Self::A)->String {
+        format!("{}.{} {}",self.0,name,last_name)
+    }
+}
+fn get_joined_str<J:Joining>(joining:&J,name:&J::A, last_name:&J::A)->String{
+    format!("Person: {}",joining.join_to_str(name, last_name))
+}
+fn pro25(){
+    let index=Index(10);
+    println!("{}",get_joined_str(&index, &"John".to_string(), &"Conor".to_string()))
+}
 fn main() {
     println!("Hello, world!");
     //pro1();
@@ -531,6 +550,6 @@ fn main() {
     //pro15();
     //pro16();
     //pro17();
-    pro23();
+    pro25();
 }
 
