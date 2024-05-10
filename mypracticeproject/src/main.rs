@@ -482,6 +482,35 @@ fn pro23() {
 
     println!("books: {books:#?}");
 }
+fn pro24() {
+    // The book objects you "received" from an API.
+    let api_books: Vec<APIBook> = vec![
+        APIBook {
+            title: "Samson and Rik".to_string(),
+            description: Some("Samson and Rik go on many adventures.".to_string()),
+        },
+        APIBook {
+            title: "De Kameleon".to_string(),
+            description: None,
+        },
+    ];
+
+    println!("api_books: {api_books:#?}");
+
+    // The book objects you would like to use throughout the rest of your program.
+    let books: Vec<Book> = api_books
+        .into_iter()
+        .filter_map(|api_book| {
+            // Create Book from the parts.
+            Some(Book {
+                 title:api_book.title, 
+                 description:api_book.description?, 
+            })
+        })
+        .collect::<Vec<_>>();
+
+    println!("books: {books:#?}");
+}
 
 fn main() {
     println!("Hello, world!");
