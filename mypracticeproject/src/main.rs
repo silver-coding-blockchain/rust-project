@@ -8,6 +8,8 @@ use std::env;
 use std::fmt::format;
 use std::fmt::write;
 use std::fs;
+use std::fs::File;
+use std::io::prelude::*;
 use std::fs::Metadata;
 use std::pin;
 use std::process::Output;
@@ -329,14 +331,16 @@ fn print_coordinates((x,y):(i32,i32)){
 fn haha(x:i32){
     println!("haha-{}",x);
 }
-struct ha{
+
+
+struct Ha{
     x:i32
 }
 fn pro15(){
     let point=(3,5);
     print_coordinates(point);
     println!("Ok={:?}",point);
-    let ha=ha{x:30};
+    let ha=Ha{x:30};
     let hahaha=ha;
     println!("Ok={}",hahaha.x);
 }
@@ -541,6 +545,15 @@ impl ConstantValue for MyStruct {
 fn pro26(){
     println!("{}",MyStruct::VAL);
 }
+
+fn pro27(){    
+    let mut file=File::open("poem.txt")
+        .expect("That file cannot open!");
+    let mut contents=String::new();
+    file.read_to_string(&mut contents)
+        .expect("That file cannot read the contents!");
+    println!("The contents of File:\n{}",contents);
+}
 fn main() {
     println!("Hello, world!");
     //pro1();
@@ -560,6 +573,6 @@ fn main() {
     //pro15();
     //pro16();
     //pro17();
-    pro26();
+    pro27();
 }
 
