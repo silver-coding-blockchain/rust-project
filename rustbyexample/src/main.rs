@@ -7,11 +7,13 @@
 //mod tuples;
 //mod enums;
 //mod constants;
-mod mutability;
+//mod mutability;
+mod scope_and_shadowing;
 fn main() {
     // Formatting::main();
     // primitives_literals_operators::main();
     // tuples::main();
     //array_and_slice::main();
-    mutability::main()  ;
+    scope_and_shadowing::main1()  ;
+    scope_and_shadowing::main2()  ;
 }
