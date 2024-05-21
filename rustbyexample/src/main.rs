@@ -14,7 +14,8 @@
 //mod nesting_labels_loop;
 //mod returningfromloops;
 //mod match_tuples;
-mod match_array;
+//mod match_array;
+mod match_enums;
 fn main() {
     // Formatting::main();
     // primitives_literals_operators::main();
@@ -27,5 +28,6 @@ fn main() {
     //nesting_labels_loop::main();
     //returningfromloops::main();
     //match_tuples::main();
-    match_array::main();
+    //match_array::main();
+    match_enums::main();
 }
