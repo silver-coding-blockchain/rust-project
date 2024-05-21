@@ -17,7 +17,8 @@
 //mod match_array;
 //mod match_enums;
 //mod match_pointers;
-mod match_structs;
+//mod match_structs;
+mod iflet;
 fn main() {
     // Formatting::main();
     // primitives_literals_operators::main();
@@ -33,5 +34,6 @@ fn main() {
     //match_array::main();
     //match_enums::main();
     //match_pointers::main();
-    match_structs::main();
+    //match_structs::main();
+    iflet::main();
 }
