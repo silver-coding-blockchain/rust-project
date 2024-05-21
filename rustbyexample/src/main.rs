@@ -15,7 +15,8 @@
 //mod returningfromloops;
 //mod match_tuples;
 //mod match_array;
-mod match_enums;
+//mod match_enums;
+mod match_pointers;
 fn main() {
     // Formatting::main();
     // primitives_literals_operators::main();
@@ -29,5 +30,6 @@ fn main() {
     //returningfromloops::main();
     //match_tuples::main();
     //match_array::main();
-    match_enums::main();
+    //match_enums::main();
+    match_pointers::main();
 }
