@@ -13,7 +13,8 @@
 //mod ifandelse;
 //mod nesting_labels_loop;
 //mod returningfromloops;
-mod match_tuples;
+//mod match_tuples;
+mod match_array;
 fn main() {
     // Formatting::main();
     // primitives_literals_operators::main();
@@ -25,5 +26,6 @@ fn main() {
     //ifandelse::main();
     //nesting_labels_loop::main();
     //returningfromloops::main();
-    match_tuples::main();
+    //match_tuples::main();
+    match_array::main();
 }
