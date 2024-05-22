@@ -21,7 +21,8 @@
 //mod iflet;
 //mod while_let;
 //mod function_method;
-mod clousers_input_parameter;
+//mod clousers_input_parameter;
+mod higherOrderFunctions;
 fn main() {
     // Formatting::main();
     // primitives_literals_operators::main();
@@ -41,5 +42,6 @@ fn main() {
    // iflet::main();
     //while_let::main();
     //function_method::main();
-    clousers_input_parameter::main();
+    //clousers_input_parameter::main();
+    higherOrderFunctions::main();
 }
