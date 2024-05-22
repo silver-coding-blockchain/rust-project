@@ -20,7 +20,8 @@
 //mod match_structs;
 //mod iflet;
 //mod while_let;
-mod function_method;
+//mod function_method;
+mod clousers_input_parameter;
 fn main() {
     // Formatting::main();
     // primitives_literals_operators::main();
@@ -39,5 +40,6 @@ fn main() {
     //match_structs::main();
    // iflet::main();
     //while_let::main();
-    function_method::main();
+    //function_method::main();
+    clousers_input_parameter::main();
 }
