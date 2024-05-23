@@ -22,7 +22,8 @@
 //mod while_let;
 //mod function_method;
 //mod clousers_input_parameter;
-mod modules_visibility;
+//mod modules_visibility;
+mod modules_struct_visibility;
 fn main() {
     // Formatting::main();
     // primitives_literals_operators::main();
@@ -43,5 +44,6 @@ fn main() {
     //while_let::main();
     //function_method::main();
     //clousers_input_parameter::main();
-    modules_visibility::main();
+    //modules_visibility::main();
+    modules_struct_visibility::main();
 }
