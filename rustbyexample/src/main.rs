@@ -22,7 +22,7 @@
 //mod while_let;
 //mod function_method;
 //mod clousers_input_parameter;
-mod higherOrderFunctions;
+mod modules_visibility;
 fn main() {
     // Formatting::main();
     // primitives_literals_operators::main();
@@ -43,5 +43,5 @@ fn main() {
     //while_let::main();
     //function_method::main();
     //clousers_input_parameter::main();
-    higherOrderFunctions::main();
+    modules_visibility::main();
 }
