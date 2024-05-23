@@ -23,7 +23,8 @@
 //mod function_method;
 //mod clousers_input_parameter;
 //mod modules_visibility;
-mod modules_struct_visibility;
+//mod modules_struct_visibility;
+mod modules_use_declaration;
 fn main() {
     // Formatting::main();
     // primitives_literals_operators::main();
@@ -45,5 +46,5 @@ fn main() {
     //function_method::main();
     //clousers_input_parameter::main();
     //modules_visibility::main();
-    modules_struct_visibility::main();
+    modules_use_declaration::main();
 }
